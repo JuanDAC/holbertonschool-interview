@@ -1,11 +1,13 @@
 #!/usr/bin/python3
 """
 Module that contain a function with a return of a pascal triangle.
+Module that contain a function with a return of a pascal triangle.
 """
 
 
 def second_last(matrix):
     """
+    Return the second last index.
     Return the second last index.
     """
     return matrix[len(matrix) - 2]
@@ -14,6 +16,7 @@ def second_last(matrix):
 def top_left(matrix, index):
     """
     Return the top left index of current value.
+    Return the top left index of current value.
     """
     return second_last(matrix)[index - 1]
 
@@ -21,12 +24,14 @@ def top_left(matrix, index):
 def top_right(matrix, index):
     """
     Return the top right index of current value.
+    Return the top right index of current value.
     """
     return second_last(matrix)[index]
 
 
 def pascal_triangle(n):
     """
+    Returns pascal triangle with n height.
     Returns pascal triangle with n height.
     """
     if n <= 0:
