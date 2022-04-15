@@ -1,9 +1,9 @@
-#!/usr/bin/env python3
-""" Module with a function that returns pascal triangle"""
+#!/usr/bin/python3
+""" Module with a function that returns pascal triangle """
 
 
 def pascal_triangle(n):
-    """ Pascal triangle generator """
+    """ function pascal triangle generator """
     if n <= 0:
         return []
 
