@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-0-main
+Module with a function that returns pascal triangle
 """
 
 
@@ -21,14 +21,3 @@ def pascal_triangle(n):
         top_right = pascal[second_last][i]
         row[i] = top_left + top_right
     return pascal
-
-
-if __name__ == "__main__":
-
-    def print_triangle(triangle):
-        """
-        Print the triangle
-        """
-        for row in triangle:
-            print("[{}]".format(",".join([str(x) for x in row])))
-    print_triangle(pascal_triangle(5))
