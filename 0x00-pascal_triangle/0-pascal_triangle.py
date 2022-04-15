@@ -1,9 +1,13 @@
 #!/usr/bin/python3
-""" Module with a function that returns pascal triangle """
+"""
+Module with a function that returns pascal triangle
+"""
 
 
 def pascal_triangle(n):
-    """ Returns pascal triangle """
+    """
+    Returns pascal triangle
+    """
     if n <= 0:
         return []
 
