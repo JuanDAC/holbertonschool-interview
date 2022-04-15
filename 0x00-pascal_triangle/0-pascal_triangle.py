@@ -3,7 +3,6 @@
 
 
 def pascal_triangle(n):
-    """ function pascal triangle generator """
     if n <= 0:
         return []
 
@@ -13,6 +12,7 @@ def pascal_triangle(n):
 
     if len(row) < 3:
         return pascal
+
     for i in range(1, len(row) - 1):
         second_last = len(pascal) - 2
         top_left = pascal[second_last][i - 1]
