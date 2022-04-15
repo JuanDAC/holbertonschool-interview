@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
 Module with a function that returns pascal triangle
+Module with a function that returns pascal triangle
 """
 
 
