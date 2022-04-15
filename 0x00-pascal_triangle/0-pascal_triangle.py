@@ -1,7 +1,5 @@
-#!/usr/bin/python3
-"""
-Module with a function that returns pascal triangle
-"""
+#!/usr/bin/env python3
+""" Module with a function that returns pascal triangle"""
 
 
 def pascal_triangle(n):
