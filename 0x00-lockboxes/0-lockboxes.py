@@ -4,7 +4,7 @@
 
 def setUnlock(boxes, unlocked, index=0):
     """ Set the lock on all boxes """
-    if unlocked[index] or index >= len(boxes):
+    if index >= len(boxes) or unlocked[index]:
         return
     unlocked[index] = True
     keys = boxes[index]
