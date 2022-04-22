@@ -1,4 +1,9 @@
+#!/usr/bin/env python3
+""" Can un lock all """
+
+
 def canUnlockAll(boxes):
+    """ Can un lock all """
     unlocked = boxes[0]
     for box_id, keys in enumerate(boxes):
         if not keys:

@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 """
 Module that contain a function with a return of a pascal triangle.
 Module that contain a function with a return of a pascal triangle.
