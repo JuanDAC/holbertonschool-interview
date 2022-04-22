@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 """ Can un lock all """
+import sys
+sys.setrecursionlimit(2000)
 
 
 def setUnlock(boxes, unlocked, index=0):
