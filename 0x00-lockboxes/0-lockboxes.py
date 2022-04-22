@@ -4,6 +4,7 @@
 
 def canUnlockAll(boxes):
     """ Can un lock all """
+
     unlocked = boxes[0]
     for box_id, keys in enumerate(boxes):
         if not keys:
