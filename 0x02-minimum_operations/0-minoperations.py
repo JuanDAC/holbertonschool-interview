@@ -27,4 +27,3 @@ def minOperations(n, result=0, index=2):
         n, result = findIterations(n, result, index)
         index += 1
     return result
-
