@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-
 '''
 Given a number n, write a method that calculates
 the fewest number of operations needed to result in
@@ -24,9 +23,9 @@ def minOperations(n, result=0, index=2):
     if n < 2 and result == 0:
         return 0
 
-    if index < (n + 1):
+    while (index < n + 1):
         n, result = findIterations(n, result, index)
-        return minOperations(n, result, index + 1)
+        index += 1
     return result
 
 
