@@ -1,9 +1,11 @@
 #!/usr/bin/python3
+""" This a documentation """
 
 from typing import List
 
 
 def makeChange(coins: List[int], total: int, acumulated: int = 0, ordered: bool = False):
+    """ This a documentation """
     if len(coins) == 0 and total > 0:
         return -(acumulated + 1)
 
