@@ -1,18 +1,18 @@
 #!/usr/bin/python3
+"""
+Given a pile of coins of different values, determine
+the fewest number of coins needed to meet a given
+amount total.
+"""
+
 from typing import List
-"""
-Given a pile of coins of different values,
-determine the fewest number of coins needed
-to meet a given amount total.
-"""
 
 
 def makeChange(coins: List[int], total: int, acumulated: int = 0, ordered: bool = False):
     """
-    Prototype: def makeChange(coins, total)
-    Return: fewest number of coins needed to meet total
-    If total is 0 or less, return 0
-    If total is 0 or less, return 0
+    Given a pile of coins of different values, determine
+    the fewest number of coins needed to meet a given
+    amount total.
     """
     if len(coins) == 0 and total > 0:
         return -(acumulated + 1)
