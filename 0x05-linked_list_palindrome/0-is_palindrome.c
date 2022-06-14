@@ -5,8 +5,11 @@ int palindrome(listint_t **string_left, listint_t **head)
     listint_t *move = NULL;
     listint_t *string_right = NULL;
 
-    if (!head || !*head)
+    if (!head || (!*head && string_left))
         return (false);
+
+    if (!*head)
+        return (true);
 
     string_right = *head;
 
