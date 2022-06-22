@@ -30,14 +30,13 @@ int exponent(const int base, int n)
  */
 int palindrome(unsigned long n, unsigned long initial, int base, int lastBase)
 {
+	if (n == 0 && base == 0)
+		return (1);
 
 	if (!lastBase)
 	{
 		if (n == 0 && base != 0)
 			return (exponent(10, (base - 1)));
-
-		if (n == 0)
-			return (0);
 
 		lastBase = palindrome(n / 10, initial, base + 1, 0);
 
