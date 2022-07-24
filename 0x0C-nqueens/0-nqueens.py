@@ -1,10 +1,10 @@
 #!/usr/bin/python3
 """
-Solving N Queens problem using backtracking algorithm 
-- 0x0C-nqueens module 
-- Holberton School 
-- Python Core - 0x0C 
-- N Queens 
+Solving N Queens problem using backtracking algorithm
+- 0x0C-nqueens module
+- Holberton School
+- Python Core - 0x0C
+- N Queens
 - Author: JuanDAC
 - Date: July 2022
 - File: 0x0C-nqueens.py
@@ -14,26 +14,26 @@ from sys import argv, exit
 
 def is_safe(y, x, board):
     """
-    Method: 
+    Method:
         is_safe(n: int, y: int, x: int, board: list) -> bool
 
-    Description: 
+    Description:
         This method checks if a queen can be placed on
         a given board at a given position. It checks if
         the queen is attacking any other piece on the board.
 
     Args:
-        y {int} 
+        y {int}
             current row
-        x {int} 
+        x {int}
             current column
-        board {List[int]} 
+        board {List[int]}
             current board
 
     Print:
-        - True if the queen can be placed on the board, False otherwise 
+        - True if the queen can be placed on the board, False otherwise
 
-    Return: 
+    Return:
         - bool
     """
 
@@ -49,10 +49,10 @@ def is_safe(y, x, board):
 
 def nqueens(n, y, board):
     """
-    Method: 
+    Method:
         nqueens(n: int, y: int, board: list) -> void
 
-    Description: 
+    Description:
         This method is a recursive method that
         places n queens on an n by n board so
         that no queens are attacking any other
@@ -60,17 +60,17 @@ def nqueens(n, y, board):
         to find a solution.
 
     Args:
-        n {int} 
+        n {int}
             number of queens
-        y {int} 
+        y {int}
             current row
-        board {List[int]} 
+        board {List[int]}
             current board
 
     Print:
-        - All possible solutions for n queens on an n by n board 
+        - All possible solutions for n queens on an n by n board
 
-    Return: 
+    Return:
         - void
     """
 
