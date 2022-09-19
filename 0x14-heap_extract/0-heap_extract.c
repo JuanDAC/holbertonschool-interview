@@ -13,8 +13,15 @@ int heap_extract(heap_t **root)
 
 	if (root == NULL || *root == NULL)
 		return (0);
+
 	value = (*root)->n;
 	last_node = get_last_node(*root);
+	if (last_node == NULL)
+	{
+		*root = NULL;
+		return (value);
+	}
+
 	if (last_node == *root)
 	{
 		free(*root);
@@ -24,7 +31,7 @@ int heap_extract(heap_t **root)
 	(*root)->n = last_node->n;
 	if (last_node->parent->left == last_node)
 		last_node->parent->left = NULL;
-	else
+	if (last_node->parent->left && last_node->parent->left != last_node)
 		last_node->parent->right = NULL;
 	free(last_node);
 	temp = *root;
@@ -68,6 +75,9 @@ void heapify(heap_t *node)
 {
 	int value;
 	heap_t *temp;
+
+	if (node == NULL)
+		return;
 
 	temp = node;
 	if (temp->left == NULL && temp->right == NULL)
