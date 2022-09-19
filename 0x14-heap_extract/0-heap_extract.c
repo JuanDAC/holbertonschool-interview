@@ -33,18 +33,18 @@ int heap_extract(heap_t **root)
 }
 
 /**
- * heapify - heapify the tree
+ * get_last_node - gets the last node of a binary tree
  * @node: pointer to the root node of the heap
  * Return: void
  */
 heap_t *get_last_node(heap_t *node)
 {
 	heap_t *last_node;
-	// base case for recursion
+	/* base case for recursion */
 	if (node == NULL)
 		return (NULL);
 
-	// if node is a leaf node
+	/* if node is a leaf node */
 	if (node->left == NULL && node->right == NULL)
 		return (node);
 

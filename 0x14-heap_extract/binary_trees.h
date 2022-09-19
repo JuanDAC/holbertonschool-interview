@@ -1,4 +1,5 @@
-
+#ifndef _BYNAARY_TREES_H_
+#define _BYNAARY_TREES_H_
 #include <stdlib.h>
 #include <stdio.h>
 
@@ -12,10 +13,10 @@
  */
 struct binary_tree_s
 {
-  int n;
-  struct binary_tree_s *parent;
-  struct binary_tree_s *left;
-  struct binary_tree_s *right;
+	int n;
+	struct binary_tree_s *parent;
+	struct binary_tree_s *left;
+	struct binary_tree_s *right;
 };
 
 typedef struct binary_tree_s binary_tree_t;
@@ -24,3 +25,4 @@ typedef struct binary_tree_s heap_t;
 int heap_extract(heap_t **root);
 heap_t *get_last_node(heap_t *node);
 void heapify(heap_t *node);
+#endif /* _BYNAARY_TREES_H_ */
