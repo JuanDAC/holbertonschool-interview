@@ -28,7 +28,8 @@ int exponent(const int base, int n)
  *
  * Return: Returns the exponent n of base
  */
-int palindrome(unsigned long n, unsigned long initial, int base, int lastBase)
+int palindrome(unsigned long n, unsigned long initial,
+							 unsigned long base, unsigned long lastBase)
 {
 	if (n == 0 && base == 0)
 		return (1);
@@ -43,15 +44,12 @@ int palindrome(unsigned long n, unsigned long initial, int base, int lastBase)
 		if (base != 0)
 			return (lastBase);
 	}
-	if (lastBase)
-	{
-		if (n == 0)
-			return (1);
+	if (n == 0)
+		return (1);
 
-		return (
+	return (
 			(initial / lastBase % 10) == (n % 10) &&
 			palindrome(n / 10, initial, base + 1, lastBase / 10));
-	}
 
 	return (0);
 }
