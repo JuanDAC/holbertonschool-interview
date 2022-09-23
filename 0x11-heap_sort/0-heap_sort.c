@@ -12,7 +12,8 @@ void sift_down(int *array, size_t index, size_t size, size_t size_print)
 {
 	size_t index_maximum = 0;
 
-	if (RIGHT_INDEX(index) < size && array[RIGHT_INDEX(index)] > array[LEFT_INDEX(index)])
+	if (RIGHT_INDEX(index) < size
+		&& array[RIGHT_INDEX(index)] > array[LEFT_INDEX(index)])
 	{
 		index_maximum = RIGHT_INDEX(index);
 	}
