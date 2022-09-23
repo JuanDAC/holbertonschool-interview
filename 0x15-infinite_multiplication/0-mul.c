@@ -1,11 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
-#define ERROR ("Error")
-#define EXIT_ERROR()  \
-do {                 \
-	print(ERROR); \
-	exit(98);     \
-} while (0)
+#include "holberton.h"
 
 /**
  * is_number - Verify that a string is numeric
@@ -23,7 +16,7 @@ int is_number(char *string)
 	if ((*string < '0' || *string > '9') && *string != '-')
 		return (0);
 
-	is_number(string + 1);
+	return (is_number(string + 1));
 }
 
 /**
@@ -41,7 +34,7 @@ void print(char *string)
 		return;
 	}
 
-	putchar(*string);
+	_putchar(*string);
 	print(string + 1);
 }
 
@@ -74,10 +67,12 @@ int main(int argc, char **argv)
 
 	if (argc != 3)
 		EXIT_ERROR();
-	num1, num2 = argv[1], argv[2];
+	num1 = argv[1];
+	num2 = argv[2];
 	if (!num1 || !is_number(num1) || !num2 || !is_number(num2))
 		EXIT_ERROR();
-	a_length, b_length = _strlen(num1), _strlen(num2);
+	a_length = _strlen(num1);
+	b_length = _strlen(num2);
 	result_length = a_length + b_length;
 	result = malloc(result_length);
 	if (result == NULL)
@@ -85,11 +80,9 @@ int main(int argc, char **argv)
 	while ((size_t)i < result_length)
 		result[i++] = 0;
 	for (i = a_length - 1; i >= 0; i--)
-	{
-		digit_a = num1[i] - '0';
+	{	digit_a = num1[i] - '0';
 		for (j = b_length - 1; j >= 0; j--)
-		{
-			digit_b = num2[j] - '0';
+		{	digit_b = num2[j] - '0';
 			k = result_length - 1 - (b_length - j - 1) - (a_length - i - 1);
 			result[k] += digit_a * digit_b;
 			for (sum = result[k]; sum > 9; sum = result[k])
