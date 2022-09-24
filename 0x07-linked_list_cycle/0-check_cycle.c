@@ -30,6 +30,6 @@ int _check_cycle(listint_t *list, listint_t *turtle,
 	return (_check_cycle(
 		list,
 		turtle->next,
-		hare->nextd ? hare->next->next : hare->next,
+		hare->next ? hare->next->next : hare->next,
 		init));
 }
