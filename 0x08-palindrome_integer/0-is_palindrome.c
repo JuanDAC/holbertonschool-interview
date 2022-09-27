@@ -29,7 +29,7 @@ int exponent(const int base, int n)
  * Return: Returns the exponent n of base
  */
 int palindrome(unsigned long n, unsigned long initial,
-							 unsigned long base, unsigned long lastBase)
+			   unsigned long base, unsigned long lastBase)
 {
 	if (n == 0 && base == 0)
 		return (1);
@@ -48,8 +48,34 @@ int palindrome(unsigned long n, unsigned long initial,
 		return (1);
 
 	return (
-			(initial / lastBase % 10) == (n % 10) &&
-			palindrome(n / 10, initial, base + 1, lastBase / 10));
+		(initial / lastBase % 10) == (n % 10) &&
+		palindrome(n / 10, initial, base + 1, lastBase / 10));
 
 	return (0);
+}
+
+#include <stdlib.h>
+#include <stdio.h>
+
+#include "palindrome.h"
+
+/**
+ * main - Entry point
+ *
+ * Return: EXIT_SUCCESS or EXIT_FAILURE
+ */
+int main(void)
+{
+	unsigned long n;
+	int ret;
+
+	n = 1999999999991;
+	ret = is_palindrome(n);
+
+	printf("%lu is ", n);
+	if (ret == 0)
+		printf("not ");
+	printf("a palindrome.\n");
+
+	return (EXIT_SUCCESS);
 }
