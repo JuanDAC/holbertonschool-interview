@@ -5,6 +5,9 @@ File that contains the rotate_2d_matrix function
 
 
 def valid_matrix_size(matrix):
+    """
+    Function that checks if a matrix is valid
+    """
     if (not type(matrix) is list):
         return False
 
@@ -24,6 +27,9 @@ def valid_matrix_size(matrix):
 
 
 def rotate_2d_matrix(matrix):
+    """
+    Function that rotates a 2D matrix 90 degrees clockwise
+    """
     if valid_matrix_size(matrix) is False:
         return
 
