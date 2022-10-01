@@ -1,17 +1,11 @@
 Curriculum Specializations Average: 57.75%\* [
-
-                  Foundations
-
-
-                  Average: 103.37%
-
+Foundations
+Average: 103.37%
 ](https://intranet.hbtn.io/curriculums/1/observe)
 
 - [Specializations Average: 57.75%](https://intranet.hbtn.io/curriculums/2/observe)
-
-You are currently connected as Student Switch to: [Staff](https://intranet.hbtn.io/users/switch_viewing_as_permission_group?group=staff)
-
-|  [You have a captain's log due before 2022-10-02 (in 2 days)! Log it now!](https://intranet.hbtn.io/captain_logs/122970/edit)
+  You are currently connected as Student Switch to: [Staff](https://intranet.hbtn.io/users/switch_viewing_as_permission_group?group=staff)
+  |  [You have a captain's log due before 2022-10-02 (in 2 days)! Log it now!](https://intranet.hbtn.io/captain_logs/122970/edit)
 
 # 0x13. Count it!
 
