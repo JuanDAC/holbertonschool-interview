@@ -19,9 +19,9 @@ typedef struct listint_s
 
 listint_t *add_nodeint(listint_t **head, const int n);
 size_t print_listint_safe(const listint_t *head);
+listint_t *find_listint_loop(listint_t *head);
+listint_t *_is_loop(listint_t *slow, listint_t *fast, int start);
 
-listint_t *_find_listint_loop(listint_t *head, listint_t *slow);
-
-#define find_listint_loop(HEAD) _find_listint_loop(HEAD, HEAD)
+#define is_loop(H) _is_loop(H, H, 1)
 
 #endif /* _LISTS_H_ */
