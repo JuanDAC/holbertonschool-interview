@@ -22,7 +22,7 @@ void print_array(int *array, size_t size)
 }
 
 /**
- * advanced_binary - searches for a value in a sorted array of integers
+ * _advanced_binary - searches for a value in a sorted array of integers
  * @array: pointer to the first element of the array to search in
  * @size: number of elements in array
  * @value: value to search for
