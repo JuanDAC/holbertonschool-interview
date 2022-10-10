@@ -26,6 +26,10 @@ int _advanced_binary(int *array, size_t size, int value, int index)
 	if (size == 1)
 		return (*array == value ? index : -1);
 
+	if (size == 2)
+		return (*array == value ? index : *(array + 1) == value ? index + 1
+																: -1);
+
 	if (array[new_size - 1] >= value)
 		return (_advanced_binary(array, size - new_size, value, index));
 
