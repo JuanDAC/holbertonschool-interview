@@ -30,7 +30,7 @@ int _advanced_binary(int *array, size_t size, int value, int index)
 		return (*array == value ? index : index + 1);
 
 	if (array[new_size - 1] >= value)
-		return (_advanced_binary(array, size - new_size, value, index));
+		return (_advanced_binary(array, size - (size / 2), value, index));
 
 	return (_advanced_binary(
 		array + new_size,
