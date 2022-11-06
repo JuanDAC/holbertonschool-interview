@@ -45,3 +45,36 @@ List *add_node_end(List **list, char *str)
      */
     return (add_node_end(&((*list)->next), str));
 }
+
+/**
+ * add_node_begin - Add a new node to the beginning of
+ * a double circular linked list
+ * Arguments:
+ * @list: the list to modify
+ * @str: the string to copy into the new node
+ * Returns: Address of the new node, or NULL on failure
+ */
+List *add_node_begin(List **list, char *str)
+{
+    List *node = NULL;
+
+    /*
+     * add_node_begin:: (NULL, str) -> NULL
+     */
+    if (!list)
+    {
+        return (NULL);
+    }
+
+    node = malloc(sizeof(List)), node->str = strdup(str);
+    if (!node)
+    {
+        return (NULL);
+    }
+    node->prev = NULL, node->next = *list;
+    /*
+     * add_node_begin:: (*{ str } , str) -> *list
+     */
+    *list = node,
+    return (node);
+}

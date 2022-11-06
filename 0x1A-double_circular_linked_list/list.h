@@ -1,5 +1,5 @@
-#ifndef LIST_H
-#define LIST_H
+#ifndef _LIST_H
+#define _LIST_H
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -24,4 +24,4 @@ typedef struct List
 List *add_node_end(List **list, char *str);
 List *add_node_begin(List **list, char *str);
 
-#endif /*LIST_H*/
+#endif /*_LIST_H*/
