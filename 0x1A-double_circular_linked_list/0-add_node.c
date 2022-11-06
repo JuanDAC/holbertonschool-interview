@@ -75,6 +75,6 @@ List *add_node_begin(List **list, char *str)
     /*
      * add_node_begin:: (*{ str } , str) -> *list
      */
-    *list = node,
+    *list = node;
     return (node);
 }
