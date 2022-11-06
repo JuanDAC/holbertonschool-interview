@@ -71,7 +71,12 @@ List *add_node_begin(List **list, char *str)
     {
         return (NULL);
     }
-    node->prev = *list, node->next = *list;
+    node->prev = NULL, node->next = NULL;
+    if (*list)
+    {
+        node->prev = (*list)->prev, node->next = (*list);
+        (*list)->prev->next = node, (*list)->prev = node;
+    }
     /*
      * add_node_begin:: (*NULL , str) -> *list
      */
