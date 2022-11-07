@@ -14,18 +14,18 @@
  */
 void print_list(List *list)
 {
-    List *tmp;
+	List *tmp;
 
-    tmp = list;
-    while (tmp)
-    {
-        printf("%s\n", tmp->str);
-        printf("\t->prev: %s\n", tmp->prev ? tmp->prev->str : "NULL");
-        printf("\t->next: %s\n", tmp->next ? tmp->next->str : "NULL");
-        tmp = tmp->next;
-        if (tmp == list)
-            break;
-    }
+	tmp = list;
+	while (tmp)
+	{
+		printf("%s\n", tmp->str);
+		printf("\t->prev: %s\n", tmp->prev ? tmp->prev->str : "NULL");
+		printf("\t->next: %s\n", tmp->next ? tmp->next->str : "NULL");
+		tmp = tmp->next;
+		if (tmp == list)
+			break;
+	}
 }
 
 /**
@@ -35,13 +35,13 @@ void print_list(List *list)
  */
 int main(void)
 {
-    List *list, *node;
+	List *list, *node;
 
-    list = NULL;
-    add_node_end(&list, "One fish");
-    node = add_node_end(&list, "Two fish");
-    print_list(list);
-    print_list(node);
+	list = NULL;
+	add_node_end(&list, "One fish");
+	node = add_node_end(&list, "Two fish");
+	print_list(list);
+	print_list(node);
 
-    return (0);
+	return (0);
 }
