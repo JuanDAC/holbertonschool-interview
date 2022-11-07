@@ -19,12 +19,17 @@ List *add_node_end(List **list, char *str)
     {
         return (NULL);
     }
+    node = malloc(sizeof(List));
+    if (!node)
+    {
+        return (NULL);
+    }
+    node->str = strdup(str), node->prev = NULL, node->next = NULL;
     /*
      * add_node_end:: (*NULL, str) -> NULL
      */
     if (!*list)
     {
-        node = malloc(sizeof(List)), node->str = strdup(str);
         node->prev = node, node->next = node;
         *list = node;
         return (node);
@@ -32,18 +37,9 @@ List *add_node_end(List **list, char *str)
     /*
      * add_node_end:: (*{ str } : *NULL, str) -> *list
      */
-    if (!(*list)->next)
-    {
-        node = malloc(sizeof(List)), node->str = strdup(str);
-        node->prev = *list, node->next = *list;
-        (*list)->next = node, (*list)->prev = node;
-        return (node);
-    }
-    /*
-     * add_node_end:: (_ : [*list], str)
-     *               -> add_node_end(list, str)
-     */
-    return (add_node_end(&((*list)->next), str));
+    (*list)->prev->next = node, node->prev = (*list)->prev;
+    (*list)->prev = node, node->next = *list;
+    return (node);
 }
 
 /**

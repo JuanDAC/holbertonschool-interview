@@ -1,6 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "list.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include "list.h"
 
 /**
  * print_list - Print informations about each element of a list
@@ -35,12 +38,10 @@ int main(void)
     List *list, *node;
 
     list = NULL;
-    node = add_node_begin(&list, "Hello World.");
-    if (list != node)
-        return (1);
-    node->str[11] = '!';
-    print_list(node);
+    add_node_end(&list, "One fish");
+    node = add_node_end(&list, "Two fish");
     print_list(list);
+    print_list(node);
 
     return (0);
 }
