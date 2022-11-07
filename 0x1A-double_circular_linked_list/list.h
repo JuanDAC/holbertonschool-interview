@@ -3,7 +3,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include<string.h>
+#include <string.h>
 #include <stddef.h>
 /**
  * struct List - doubly linked list
@@ -16,9 +16,9 @@
  */
 typedef struct List
 {
-    char *str;
-    struct List *prev;
-    struct List *next;
+	char *str;
+	struct List *prev;
+	struct List *next;
 } List;
 
 List *add_node_end(List **list, char *str);
