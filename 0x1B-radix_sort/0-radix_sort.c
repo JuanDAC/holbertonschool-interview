@@ -8,7 +8,7 @@
  */
 void radix_sort(int *array, size_t size)
 {
-	int i = 0, j = 0, k = 0, max = 0, exp = 0;
+	int i = 0, max = 0, exp = 0;
 	int *output = NULL, *count = NULL;
 
 	if (array == NULL || size < 2)
