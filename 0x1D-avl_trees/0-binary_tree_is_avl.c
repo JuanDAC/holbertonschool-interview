@@ -5,7 +5,7 @@
  * @tree: pointer to the root node of the tree to measure the height.
  * Return: height of the tree
  */
-size_t binary_tree_height(const binary_tree_t *tree)
+int binary_tree_height(const binary_tree_t *tree)
 {
 	int left_height = 0;
 	int right_height = 0;
@@ -18,10 +18,7 @@ size_t binary_tree_height(const binary_tree_t *tree)
 	if (tree->right != NULL)
 		right_height = binary_tree_height(tree->right) + 1;
 
-	if (left_height > right_height)
-		return (left_height);
-	else
-		return (right_height);
+	return (left_height > right_height) ? (left_height) : (right_height);
 }
 
 /**
@@ -39,6 +36,7 @@ int binary_tree_is_avl(const binary_tree_t *tree)
 
 	left_height = binary_tree_height(tree->left);
 	right_height = binary_tree_height(tree->right);
+	printf("left_height: %d, right_height: %d ", left_height, right_height);
 
 	if (abs(left_height - right_height) <= 1 &&
 		binary_tree_is_avl(tree->left) &&
