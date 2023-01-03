@@ -1,57 +1,56 @@
-
 #include "substring.h"
-
 /**
- * find_substring - finds all the possible substrings containing a list
- * of words,
- * within a given string.
- * @s: is the string to scan
- * @words: is the array of words all substrings must be a concatenation
+ * find_substring -  finds all the possible substrings containing a list of
+ * words, within a given string
+ * @s: string to scan
+ * @words:  array of words all substrings must be a concatenation=
  * arrangement of
- * @nb_words: is the number of elements in the array words
- * @n: holds the address at which to store the number of elements in the
- * returned array.
- * Return: an allocated array, storing each index in s, at which a substring
+ * @nb_words: number of elements in the array words
+ * @n: address at which to store the number of elements in the returned array
+ *
+ * Return:  an allocated array, storing each index in s, at which a
+ * substring was found. If no solution is found, NULL can be returned
  */
 int *find_substring(char const *s, char const **words, int nb_words, int *n)
 {
-	int *result = NULL;
-	int i, j, k, l, len, word_len, count, found;
-	char *tmp;
 
-	if (s == NULL || words == NULL || nb_words == 0 || n == NULL)
+	int i, j, k, current_index, count, string_len, len_of_words, check_strings;
+	int *index_array, *matched;
+
+	if (!s || !words || !n || nb_words == 0)
 		return (NULL);
-	*n = 0;
-	len = strlen(s);
-	word_len = strlen(words[0]);
-	result = malloc(sizeof(int) * len);
-	if (result == NULL)
+
+	string_len = strlen(s);
+	len_of_words = strlen(words[0]);
+	index_array = malloc(string_len * sizeof(int));
+	if (!index_array)
 		return (NULL);
-	for (i = 0; i < len - nb_words * word_len + 1; i++)
-	{	tmp = strdup(s);
-		if (tmp == NULL)
-		{
-			free(result);
-			return (NULL);
-		}
-		count = 0;
+	matched = malloc(nb_words * sizeof(int));
+	if (!matched)
+		return (NULL);
+
+	for (i = count = 0; i <= string_len - nb_words * len_of_words; i++)
+	{
+		memset(matched, 0, nb_words * sizeof(int));
 		for (j = 0; j < nb_words; j++)
-		{	found = 0;
-			for (k = i; k < len - word_len + 1; k += word_len)
-				if (strncmp(tmp + k, words[j], word_len) == 0)
+		{
+			for (k = 0; k < nb_words; k++)
+			{
+				current_index = i + j * len_of_words;
+				check_strings = strncmp(s + current_index, *(words + k), len_of_words);
+				if (!*(matched + k) && !check_strings)
 				{
-					for (l = k; l < k + word_len; l++)
-						tmp[l] = ' ';
-					count++;
-					found = 1;
+					*(matched + k) = 1;
 					break;
 				}
-			if (found == 0)
+			}
+			if (k == nb_words)
 				break;
 		}
-		if (count == nb_words)
-			result[(*n)++] = i;
-		free(tmp);
+		if (j == nb_words)
+			*(index_array + count) = i, count += 1;
 	}
-	return (result);
+	free(matched);
+	*n = count;
+	return (index_array);
 }
