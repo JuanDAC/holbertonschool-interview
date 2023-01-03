@@ -8,13 +8,23 @@
  */
 int regex_match(char const *str, char const *pattern)
 {
-	if (*str == '\0' && *pattern == '\0')
-		return (1);
-	if (*str == *pattern && *(pattern + 1) != '*')
-		return (regex_match(str + 1, pattern + 1));
-	if (*str == *pattern && *(pattern + 1) == '*')
+	int check_dot = 0, check_star = 0;
+
+	if (!str || !pattern)
+		return (0);
+
+	check_dot = *str && (*str == *pattern || *pattern == '.');
+	check_star = *(pattern + 1) == '*';
+
+	if (!*str && !check_star)
+		return (*pattern ? 0 : 1);
+
+	if (check_dot && check_star)
 		return (regex_match(str + 1, pattern) || regex_match(str, pattern + 2));
-	if (*str != *pattern && *(pattern + 1) == '*')
+	if (check_dot && !check_star)
+		return (regex_match(str + 1, pattern + 1));
+	if (check_star)
 		return (regex_match(str, pattern + 2));
+
 	return (0);
 }
