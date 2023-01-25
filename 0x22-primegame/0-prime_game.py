@@ -1,14 +1,12 @@
 #!/usr/bin/python3
 """ Prime Game """
 
-import math
-
 
 def is_prime(n):
     """ Check if n is a prime number """
     if n < 2:
         return False
-    for i in range(2, int(math.sqrt(n)) + 1):
+    for i in range(2, int(n**0.5) + 1):
         if not n % i:
             return False
     return True
@@ -16,7 +14,7 @@ def is_prime(n):
 
 def primes_until(n):
     """Return a list of prime numbers until n"""
-    return [i for i in range(2, n+1) if is_prime(i)]
+    return list(filter(is_prime, range(2, n+1)))
 
 
 def isWinner(x, nums):
@@ -36,7 +34,6 @@ def isWinner(x, nums):
 
     if score["Maria"] > score["Ben"]:
         return "Maria"
-
     elif score["Ben"] > score["Maria"]:
         return "Ben"
 
